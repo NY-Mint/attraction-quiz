@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 선택지 버튼 호버 효과 */
+.option-btn {
+  @apply relative overflow-hidden transition-all duration-200 ease-out;
+}
+
+.option-btn::after {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-200;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.option-btn:hover::after {
+  @apply opacity-100;
+}
+
+/* 스크롤바 숨기기 (모바일) */
+::-webkit-scrollbar {
+  width: 0px;
+}
